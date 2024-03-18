@@ -14,6 +14,7 @@ or copy it directly using the links below.
 - [ ] send in files with your comments by (one of)
   - Inline-Code-Comments and send us the files
   - drop the files anywhere and send us the link
+  - upload the code to your own Repository (Avoid forking the repository and creating a PR, as this would make your solution visible to others)
 
 ## Install
 
