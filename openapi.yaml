@@ -7,6 +7,7 @@ paths:
     get:
       summary: Get Messages
       description: Retrieves a list of messages.
+      #  consider moving this schema definition to components/schemas to avoid duplication
       responses:
         '200':
           description: Successful response
@@ -34,10 +35,12 @@ paths:
                     status: "sent"
                   - text: "Thanks, I'm fine. How about you?"
                     status: "sent"
+        #  add error responses like "400" and "500" for validation and server errors
   /messages/send:
-    get:
+    get:  #  use POST instead of GET for operations with a requestBody
       summary: Send a Message
       requestBody:
+        #  add `required: true` and define a separate MessageCreate schema under components/schemas
         content:
           application/json:
             schema:
@@ -48,3 +51,5 @@ paths:
       responses:
         '204':
           description: Successfully sent
+        #  consider returning "201 Created" with the created Message object in the response body
+        #  add error responses like "400" for missing text or "401"/"403" if authentication is required

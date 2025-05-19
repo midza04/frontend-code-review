@@ -1,0 +1,9 @@
+<div style="background-color: #fff">
+  // Maybe I can use a class here instead of an inline style?
+  <span class="block bg-slate-200 text-slate-500"
+    >#{{ no }} - {{ message.status }}</span
+  >
+  <div class="p-2" [ngClass]="{ 'text-slate-500': message.status === 'draft' }">
+    {{ message.text }}
+  </div>
+</div>
